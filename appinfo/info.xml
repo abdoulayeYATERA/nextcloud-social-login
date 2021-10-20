@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>milliweb_sociallogin</id>
+    <id>sociallogin</id>
     <name>Milliweb Social Login</name>
     <summary>Social login via OAuth or OpenID</summary>
     <description> </description>
