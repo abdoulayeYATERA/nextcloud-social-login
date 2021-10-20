@@ -169,6 +169,20 @@ final class Profile
     public $zip = null;
 
     /**
+    * role of user i.e Numeriweb admin , manager , professor or student
+    *
+    * @var string
+    */
+    public $user_role = null;
+
+    /**
+    * role_id of user i.e Numeriweb admin = 4 , manager = 5 , professor = 2 , student = 6 
+    *
+    * @var string
+    */
+    public $role_id = null;
+
+    /**
      * An extra data which is related to the user
      *
      * @var array

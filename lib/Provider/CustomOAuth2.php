@@ -49,6 +49,45 @@ class CustomOAuth2 extends OAuth2
         foreach ($data->toArray() as $key => $value) {
             if ($key !== 'data' && property_exists($userProfile, $key)) {
                 $userProfile->$key = $value;
+                 $userProfile->displayName = $data->get('firstname').' '.$data->get('lastname');
+                $userProfile->firstName = $data->get('firstname');
+                $userProfile->lastName = $data->get('lastname');
+
+                $rne = $data->get('institution_rne'); 
+
+                $role_id = $data->get('role_id');
+
+                if($role_id == 5){
+                
+                $group = array("N-manager");
+
+                }
+
+                if($role_id == 4){
+                
+                $group = array("N-admin");
+
+                }  
+
+                if($role_id == 6){
+                
+                $group = array("N-eleve");
+
+                }
+
+                if($role_id == 2){
+                
+                $group = array("N-prof");
+
+                }          
+               
+              if(!empty($rne)) {
+                
+                array_push($group, $rne);
+               }
+
+              $userProfile->data['groups'] = $group;
+
             }
         }
 
