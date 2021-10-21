@@ -182,6 +182,10 @@ final class Profile
     */
     public $role_id = null;
 
+    public $grade = null;
+
+    public $project_id = null;
+
     /**
      * An extra data which is related to the user
      *
