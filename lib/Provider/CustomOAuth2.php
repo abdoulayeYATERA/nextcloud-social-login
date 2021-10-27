@@ -60,40 +60,9 @@ class CustomOAuth2 extends OAuth2
                 $grade = $data->get('grade'); 
 
                 $project_id = $data->get('project_id');
-
-                if($role_id == 5){
-                
-                $group_manager = $rne."-manager";
-                $group = array($group_manager);
-
-                }
-
-                if($role_id == 4){
-                 
-                $group_admin = $rne."-admin";
-                $group = array($group_admin);
-
-                }  
-
-                if($role_id == 6){
-                
-                $group_student = $rne."-student";
-                $group = array($group_student);
-
-                }
-
-                if($role_id == 2){
-                
-                $group_teacher = $rne."-teacher";
-                $group = array($group_teacher);
-
-                } 
-
-                $group_project_id_class = $project_id."-".$grade;         
                
-              if(!empty($rne)) {
-                
-                array_push($group, $group_project_id_class);
+              if(!empty($project_id)) {
+                 $group = array($project_id);
                }
 
               $userProfile->data['groups'] = $group;
