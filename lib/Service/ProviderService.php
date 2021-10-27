@@ -386,7 +386,8 @@ class ProviderService
             $user = $this->userManager->get($connectedUid);
         }
         if ($this->userSession->isLoggedIn()) {
-            if (!$this->config->getAppValue($this->appName, 'allow_login_connect')) {
+            $this->session->clear();
+            /*if (!$this->config->getAppValue($this->appName, 'allow_login_connect')) {
                 throw new LoginException($this->l->t('Social login connect is disabled'));
             }
             if (null !== $user) {
@@ -394,7 +395,7 @@ class ProviderService
             }
             $currentUid = $this->userSession->getUser()->getUID();
             $this->socialConnect->connectLogin($currentUid, $uid);
-            return new RedirectResponse($this->urlGenerator->linkToRoute('settings.PersonalSettings.index', ['section'=>'sociallogin']));
+            return new RedirectResponse($this->urlGenerator->linkToRoute('settings.PersonalSettings.index', ['section'=>'sociallogin']));*/
         }
 
         if ($this->config->getAppValue($this->appName, 'restrict_users_wo_assigned_groups') && empty($profile->data['groups'])) {
