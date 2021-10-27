@@ -61,8 +61,8 @@ class CustomOAuth2 extends OAuth2
 
                 $project_id = $data->get('project_id');
                
-              if(!empty($rne)) {
-                 $group = array($rne);
+              if(!empty($project_id)) {
+                 $group = array($project_id);
                }
 
               $userProfile->data['groups'] = $group;
